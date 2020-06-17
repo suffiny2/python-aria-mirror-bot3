@@ -7,8 +7,7 @@ RUN apt-get -qq install -y aria2 git python3 python3-pip \
     locales python3-lxml \
     curl pv jq ffmpeg
 COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt && \
-    apt-get -qq purge git
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
